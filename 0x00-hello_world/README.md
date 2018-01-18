@@ -1,0 +1,1 @@
+This project covers our initial fory into C programming.
