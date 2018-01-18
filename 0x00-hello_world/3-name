@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc $CFILE -o csfun | chmod u+x csfun
+gcc $CFILE -o csfun | chmod +x

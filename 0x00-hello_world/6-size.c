@@ -3,17 +3,11 @@
 int main(void)
 {
 
-  char c;
-  int i;
-  long int li;
-  long long int lli;
-  float f;
-
-  printf ("The size of a char is: %lu.\n", (unsigned long)sizeof(c));
-  printf ("The size of an int is: %lu.\n", (unsigned long)sizeof(i));
-  printf ("The size of a long int is: %lu.\n", (unsigned long)sizeof(li));
-  printf ("The size of a long long int is: %lu.\n", (unsigned long)sizeof(lli));
-  printf ("The size of a float is: %lu.\n", (unsigned long)sizeof(f));
+  printf ("The size of a char is: %lu.\n", (unsigned long)sizeof(char));
+  printf ("The size of an int is: %lu.\n", (unsigned long)sizeof(int));
+  printf ("The size of a long int is: %lu.\n", (unsigned long)sizeof(long int));
+  printf ("The size of a long long int is: %lu.\n", (unsigned long)sizeof(long long int));
+  printf ("The size of a float is: %lu.\n", (unsigned long)sizeof(float));
 
   return(0);
 }
