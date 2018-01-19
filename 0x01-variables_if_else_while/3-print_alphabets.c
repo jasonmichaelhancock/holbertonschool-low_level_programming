@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-    int main () 
-    {
+int main () 
+{
     char ch;
 
     for(ch = 'a' ; ch <= 'z' ; ch++)
@@ -14,4 +14,5 @@
       }
     putchar('\n');
     return(0);
-    }
+}
+
