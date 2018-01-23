@@ -1,0 +1,1 @@
+This project covers nested while loops, and goes into the use of functions and how functions and header files relate to each other.
