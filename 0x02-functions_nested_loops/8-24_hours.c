@@ -2,8 +2,6 @@
 
 /**
  * jack_bauer - Entry point
- * @n: the value to return
- * @m: the value to return
  *
  * Return: int
  */
@@ -24,4 +22,5 @@ void jack_bauer(void)
 			_putchar ('\n');
 		}
 	}
+	return (0);
 }
