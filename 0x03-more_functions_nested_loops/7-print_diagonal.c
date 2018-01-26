@@ -14,13 +14,19 @@ void print_diagonal(int n)
 	}
 	else
 	{
-		char c;
+		int c;
 
 		for (c = 0; c < n; c++)
 		{
-			_putchar(32);
+			int d;
+			{
+				for (d = (c + 1); d > 1; d--)
+				{
+					_putchar(32);
+				}
+			}
+			_putchar(92);
+			_putchar('\n');
 		}
-	_putchar(92);
-	_putchar('\n');
 	}
 }
