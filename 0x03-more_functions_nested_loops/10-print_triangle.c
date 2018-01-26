@@ -1,5 +1,11 @@
 #include "holberton.h"
 
+/**
+ * print_triangle  - Entry poin
+ * @size: the value to send
+ *
+ * Return: void
+ */
 void print_triangle(int size)
 {
 	int x;
