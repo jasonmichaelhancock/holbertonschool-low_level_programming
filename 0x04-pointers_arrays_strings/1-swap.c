@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * swap_int - reset to 98
+ * swap_int - swap values
  * @a: one pointer value
  * @b: second pointer value
  *
