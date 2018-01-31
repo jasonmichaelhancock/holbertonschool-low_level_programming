@@ -1,0 +1,1 @@
+This project covers pointers, arrays, and strings, oh my!
