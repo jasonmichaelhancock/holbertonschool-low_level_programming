@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * puts - print string
+ * _puts - print string
  * @str: the array value
  *
  * Return: void
