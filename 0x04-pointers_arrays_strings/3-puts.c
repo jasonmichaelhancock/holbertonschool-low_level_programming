@@ -1,5 +1,11 @@
 #include "holberton.h"
 
+/**
+ * puts - print string
+ * @str: the array value
+ *
+ * Return: void
+ */
 void _puts(char *str)
 {
 	int length;
