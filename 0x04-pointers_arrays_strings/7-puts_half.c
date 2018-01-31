@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * puts_half - check the code for Holberton School students.
+ * puts_half - print half string
  * @str: the array value
  *
  * Return: void
