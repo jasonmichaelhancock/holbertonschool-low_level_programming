@@ -1,5 +1,11 @@
 #include "holberton.h"
 
+/**
+ * puts_half - check the code for Holberton School students.
+ * @str: the array value
+ *
+ * Return: void
+ */
 void puts_half(char *str)
 {
 	int length;
