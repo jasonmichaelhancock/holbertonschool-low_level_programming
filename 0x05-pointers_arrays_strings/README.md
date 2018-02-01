@@ -1,0 +1,1 @@
+More pointers covers pointers arrays and strings similarly to project 0x04 in this track.  This is to solidify our knowledge of pointers.
