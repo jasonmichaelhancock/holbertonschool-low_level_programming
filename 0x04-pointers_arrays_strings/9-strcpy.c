@@ -1,9 +1,11 @@
 #include "holberton.h"
 
 /**
- * main - check the code for Holberton School students.
+ * _strcpy - swap string into address
+ * @dest: destination
+ * @src: source.
  *
- * Return: Always 0.
+ * Return: dest.
  */
 char *_strcpy(char *dest, char *src)
 {
