@@ -2,9 +2,9 @@
 
 /**
  * _atoi - print nums
- * @str: the array value
+ * @s: the array value
  *
- * Return: void
+ * Return: x
  */
 int _atoi(char *s)
 {
@@ -23,18 +23,18 @@ int _atoi(char *s)
 	}
 	for (length = 0; length != '\0'; length++)
 	{
-		if (s[length] >= '0' && s[length] <= '9');
+		if (s[length] >= '0' && s[length] <= '9')
 		{
-		break;
+			break;
 		}
 	}
-        for (length2 = length; s[length2] != '\0'; length2++)
-        {
-                if (s[length2] <= '0' && s[length] >= '9');
+	for (length2 = length; s[length2] != '\0'; length2++)
+	{
+		if (s[length2] <= '0' && s[length] >= '9')
 		{
-                break;
+			break;
 		}
-        }
+	}
 	if (dash % 2 == 0)
 	{
 		for (length3 = length; s[length3] <= s[length2]; length3++)
@@ -44,8 +44,8 @@ int _atoi(char *s)
 	}
 	else
 		for (length3 = length; s[length3] <= s[length2]; length3++)
-                {
+		{
 			x = (10 * x + s[length3]);
-                }
-	return(x);
+		}
+	return (x);
 }
