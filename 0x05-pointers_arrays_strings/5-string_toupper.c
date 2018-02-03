@@ -2,16 +2,15 @@
 
 /**
  * string_toupper - Make string upper.
- * @: the typecast
+ * @a: the array
  *
  * Return: Always 0.
  */
-char *string_toupper(char *)
+char *string_toupper(char *a)
 {
-	char *a;
 	int i;
 
-	while (a[1] != '\0')
+	while (a[i] != '\0')
 	{
 		if (a[i] >= 97 && a[i] <= 122)
 		{
