@@ -3,8 +3,7 @@
 /**
  * _strstr - check the code for Holberton School students.
  * @haystack: the return pointer
- * @needle: the string to look for
- *
+ * @needle: the string to look f *
  * Return: .
  */
 char *_strstr(char *haystack, char *needle)
@@ -17,10 +16,11 @@ char *_strstr(char *haystack, char *needle)
 	{
 		for (j = 0; haystack[j] != '\0'; j++)
 		{
-			x = j;
 			if (haystack[j] == needle[i])
 			{
-				for (j = j; haystack[j] != '\0'; j++)
+				x = j;
+
+				for (i = i; needle[i] != '\0'; i++)
 				{
 					if (haystack[j] != needle[i])
 					{
@@ -28,7 +28,7 @@ char *_strstr(char *haystack, char *needle)
 					}
 					else
 					{
-						i++;
+						j++;
 					}
 				}
 				return (&haystack[x]);
