@@ -1,12 +1,12 @@
 #include "holberton.h"
 
 /**
- * Main - the function
- * @argc - number of arguments
- * @argv - the array of arguments
+ * main - the function
+ * @argc: number of arguments
+ * @argv: the array of arguments
  *
- * Return - 0 is success.
- **/
+ * Return: 0 is success.
+ */
 int main(int argc, char *argv[])
 {
 	int i;
