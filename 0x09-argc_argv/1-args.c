@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
  * main - the function
@@ -7,14 +8,8 @@
  *
  * Return: 0 is success.
  */
-int main(int argc; char *argv[])
+int main(int argc, char *argv[]__attribute__((__unused__)))
 {
-	int i;
-
-	for (i = 0; i < argc; i++)
-	{
-		;
-	}
-	printf("%d\n", i);
+	printf("%d\n", argc - 1);
 	return (0);
 }
