@@ -1,0 +1,1 @@
+This project covers malloc and free, the manual way of allocating memory, and th way to release that meory, respectively.
