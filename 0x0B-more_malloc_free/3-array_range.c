@@ -27,4 +27,5 @@ int *array_range(int min, int max)
 	}
 	p[i + 1] = min;
 	return (p);
+	free(p);
 }
