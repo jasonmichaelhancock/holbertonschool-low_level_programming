@@ -12,13 +12,11 @@
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	struct dog
+	struct dog;
 	{
-		d;
-		name;
-		age;
-		owner;
-	} dog;
-	d = &dog;
-	return (d);
+		name = "Fido";
+		age = 98;
+		owner = "Jason";
+	}
+	my_dog = {name, age, owner;
 }
