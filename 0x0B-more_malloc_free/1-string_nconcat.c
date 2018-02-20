@@ -1,4 +1,4 @@
-git #include "holberton.h"
+#include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -12,43 +12,32 @@ git #include "holberton.h"
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int a, j, k, l;
+	unsigned int i, j, k, l, size;
 	char *p;
 
 	if (s1 == NULL)
 		s1 = ("");
 	if (s2 == NULL)
 		s2 = ("");
-	for (a = 0; s2[a] != '\0'; a++)
+
+	for (i = 0; s1[i] != '\0'; i++)
+	{
 		;
+	}
 	for (k = 0; s2[k] != '\0'; k++)
+	{
 		;
+	}
 	if (n >= k)
-	{
-		p = malloc((sizeof(char) * (a + k)) +  1);
-	}
-	else
-	{
-		p = malloc((sizeof(char) * (a + n)) +  1);
-	}
-	if (p == NULL)
+                size = k;
+        else
+                size = n;
+	p = malloc((sizeof(char) * i) + (sizeof(char) * size) + 1);
+	if (p == 0)
 		return (NULL);
-	for (j = 0; j < a; j++)
+	for (j = 0; j <= i; j++)
 		p[j] = s1[j];
-	if (n >= k)
-	{
-		for (l = 0; l < k; l++)
-			p[l + j] = s2[l];
-		l++;
-		p[l + j + 1] = ('\0');
-	}
-	else
-	{
-		for (l = 0; l < n; l++)
-			p[l + j] = s2[l];
-		l++;
-		p[l + j + 1] = ('\0');
-	}
+	for (l = 0; l <= size; l++)
+		p[l + i] = s2[l];
 	return (p);
-	free(p);
 }
