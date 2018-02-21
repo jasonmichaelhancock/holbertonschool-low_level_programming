@@ -28,8 +28,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		;
 	}
-	printf("%d\n", i);
-	printf("%d\n", k);
 	if (n >= k)
 		size = k;
 	else
@@ -40,8 +38,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (j = 0; j < i; j++)
 		p[j] = s1[j];
 	for (l = 0; l < size; l++)
-		p[l + i] = s2[l];
-	p[l + size] = '\0';
-	free(p);
+	{
+		p[j] = s2[l];
+		j++;
+	}
+	p[j] = '\0';
 	return (p);
 }
