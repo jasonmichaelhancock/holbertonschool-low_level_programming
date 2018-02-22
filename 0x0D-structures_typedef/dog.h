@@ -1,5 +1,5 @@
-#ifndef DOG_H
-#define DOG_H
+#ifndef CAT_H
+#define CAT_H
 
 /**
  * struct dog - initializing the struct.
@@ -15,7 +15,7 @@ struct dog
 	float age;
 	char *owner;
 };
-typedef struct dog
+typedef struct dog_t
 {
 	char *name;
         float age;
@@ -23,4 +23,5 @@ typedef struct dog
 }dog_t;
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
+void free_dog(dog_t *d);
 #endif
