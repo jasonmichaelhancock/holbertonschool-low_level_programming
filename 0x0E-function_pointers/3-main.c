@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 	int x;
 	int a;
 	int b;
-	int (*f)(int,int);
+	int (*f)(int, int);
 
 	if (argc != 4)
 	{
@@ -29,14 +29,14 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 	a = atoi(argv[1]);
-        b = atoi(argv[3]);
+	b = atoi(argv[3]);
 
 	if ((argv[2][0] == '%' && b == 0) || (argv[2][0] == '/' && b == 0))
 	{
 		printf("Error\n");
 		exit(100);
 	}
-	x = f(a,b);
+	x = f(a, b);
 	printf("%d\n", x);
 	return (0);
 }
