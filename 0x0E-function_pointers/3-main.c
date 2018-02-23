@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include "function_pointers.h"
+#include <stdlib.h>
+#include "3-calc.h"
 
 /**
  * main - the steak
@@ -8,27 +9,34 @@
  *
  * Return: the output
  */
-int main(argc, *argv[])
+int main(int argc, char *argv[])
 {
-	int a = atoi(argv[1]);
-	int b = atoi(aegv[3]);
-	int (*f)(int, int);
-
-	f = get_op_func(argv[2]);
+	int x;
+	int a;
+	int b;
+	int (*f)(int,int);
 
 	if (argc != 4)
 	{
-		printf("ERROR\n");
+		printf("Error\n");
+		exit(98);
+	}
+	f = get_op_func(argv[2]);
+
+	if (f == NULL || argv[2][1] != '\0')
+	{
+		printf("Error\n");
 		exit(99);
 	}
-	if (p == NULL || argv[2][1] != '\0')
+	a = atoi(argv[1]);
+        b = atoi(argv[3]);
+
+	if ((argv[2][0] == '%' && b == 0) || (argv[2][0] == '/' && b == 0))
 	{
-		printf("ERROR\n");
-		exit(99);
-	}
-	if ((argv[2][0] == '%' && b == 0) || argv[2][0] == '/' && b == 0))
-	{
-		printf("ERROR");
+		printf("Error\n");
 		exit(100);
 	}
+	x = f(a,b);
+	printf("%d\n", x);
+	return (0);
 }
