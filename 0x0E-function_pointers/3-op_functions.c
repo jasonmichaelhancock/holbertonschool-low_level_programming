@@ -5,10 +5,13 @@
  *
  * @a: The operator
  * @b: The other operator
+ *
+ * Return: c
  */
 int op_add(int a, int b)
 {
 	int c = (a + b);
+
 	return (c);
 }
 
@@ -18,11 +21,13 @@ int op_add(int a, int b)
  * @a: The operato
  * @b: The other operator
  *
+ * Return: c
  */
 int op_sub(int a, int b)
 {
-        int c = (a - b);
-        return (c);
+	int c = (a - b);
+
+	return (c);
 }
 
 /**
@@ -30,12 +35,15 @@ int op_sub(int a, int b)
  *
  * @a: The operator
  * @b: The other operator
-
+ *
+ * Return: c
  */
 int op_mul(int a, int b)
 {
-        int c = (a * b);
-        return (c);
+
+	int c = (a * b);
+
+	return (c);
 }
 
 /**
@@ -43,11 +51,14 @@ int op_mul(int a, int b)
  *
  * @a: The operator
  * @b: The other operator
+ *
+ * Return: c
  */
 int op_div(int a, int b)
 {
-        int c = (a / b);
-        return (c);
+	int c = (a / b);
+
+	return (c);
 }
 
 /**
@@ -55,9 +66,12 @@ int op_div(int a, int b)
  *
  * @a: The operator
  * @b: The other operator
+ *
+ * Return: c
  */
 int op_mod(int a, int b)
 {
-        int c = (a % b);
-        return (c);
+	int c = (a % b);
+
+	return (c);
 }
