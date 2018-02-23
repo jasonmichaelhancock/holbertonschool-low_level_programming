@@ -6,8 +6,6 @@
  * get_op_func - get the functions
  *
  * @s: the operator
- * @int: argument 2
- * @int: argument 4
  *
  * Return: pointer to a function
  */
