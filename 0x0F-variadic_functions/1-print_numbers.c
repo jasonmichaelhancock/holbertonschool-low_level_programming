@@ -14,6 +14,11 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	unsigned int x;
 	int item;
 
+	if (n == 0)
+	{
+		printf("\n");
+		return;
+	}
 	va_start(arguments, n);
 	for (x = 0; x < n - 1; x++)
 	{
