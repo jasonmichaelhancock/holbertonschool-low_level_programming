@@ -1,5 +1,6 @@
 #include "variadic_functions.h"
 #include <stdarg.h>
+#include <stdlib.h>
 
 /**
  * print_all - prints all type arguments.
@@ -17,19 +18,21 @@ void print_all(const char * const format, ...)
 		{"i", op_int},
 		{"f", op_float},
 		{"s", op_string},
+		{NULL, NULL}
 	};
 	va_start(thelist, format);
 	while (format[j] != '\0')
 	{
-		while (ops[i].cifs != '\0')
+		while (ops[i].cifs != NULL)
 		{
-			if (format[j] == (ops[i].cifs[0]))
+			if (format[j] == *(ops[i].cifs))
 			{
-				fp(thelist);
-				i++;
+				ops[i].fp(thelist);
+				printf(", ");
 			}
-			j++;
+			i++;
 		}
+		j++;
 	}
 }
 /**
