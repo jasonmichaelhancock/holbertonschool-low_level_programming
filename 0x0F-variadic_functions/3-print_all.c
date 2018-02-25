@@ -3,39 +3,76 @@
 
 /**
  * print_all - prints all type arguments.
- * @separator: what separates arguments.
- * @n: the number if arguments.
+ * @format: The format string.
  *
  * Return: Always void.
  */
 void print_all(const char * const format, ...)
 {
-	va_list arguments;
+	va_list thelist;
 	int i = 0;
-	char thing1;
-	int thing2;
-	float thing3;
-	char *thing4;
-
-	va_start(arguments, format);
-	while (format[i] != '\0')
+	int j = 0;
+	op_t ops[] = {
+		{"c", op_char},
+		{"i", op_int},
+		{"f", op_float},
+		{"s", op_string},
+	};
+	va_start(thelist, format);
+	while (format[j] != '\0')
 	{
-		switch(format[i])
+		while (ops[i].cifs != '\0')
 		{
-		case 'c':
-			thing1 = va_arg(arguments, int);
-			printf("%c, ", thing1);
-		case 'i':
-			thing2 = va_arg(arguments, int);
-			printf("%d, ", thing2);
-		case 'f':
-			thing3 = va_arg(arguments, double);
-			printf("%f, ", thing3);
-		case 's':
-			thing4 = va_arg(arguments, char*);
-			printf("%s, ", thing4);
+			if (format[j] == (ops[i].cifs))
+			{
+				fp(thelist);
+				i++;
+			}
+			j++;
 		}
-		i++;
 	}
-	printf("\n");
+}
+/**
+ * op_char - char function.
+ * @thelist: The arguments.
+ *
+ * Return: nothing.
+ */
+void op_char(va_list thelist)
+{
+        printf("%c, ", va_arg(thelist, int));
+        return;
+}
+/**
+ * op_int - int function.
+ * @thelist: The arguments.
+ *
+ * Return: nothing.
+ */
+void op_int(va_list thelist)
+{
+	printf("%d, ", va_arg(thelist, int));
+	return;
+}
+/**
+ * op_float - float function
+ * @thelist: the arguments
+ *
+ * Return: nothing.
+ */
+void op_float(va_list thelist)
+{
+	printf("%f, ",va_arg(thelist, double));
+	return;
+}
+/**
+ * op_string - string function
+ * @thelist: the arguments
+ *
+ * Return: nothing.
+ */
+void op_string(va_list thelist)
+{
+	printf("%s, ", va_arg(thelist, char*));
+	return;
 }
