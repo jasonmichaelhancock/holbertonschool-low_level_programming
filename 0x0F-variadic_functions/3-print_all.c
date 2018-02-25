@@ -23,7 +23,7 @@ void print_all(const char * const format, ...)
 	{
 		while (ops[i].cifs != '\0')
 		{
-			if (format[j] == (ops[i].cifs))
+			if (format[j] == (ops[i].cifs[0]))
 			{
 				fp(thelist);
 				i++;
