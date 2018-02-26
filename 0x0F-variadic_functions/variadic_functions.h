@@ -10,18 +10,17 @@ void print_all(const char * const format, ...);
 /**
  * struct op - Struct op
  *
- * @op: The operator
- * @f: The function associated
+ * @cifs: The operator
+ * @fp: The function associated
  */
 typedef struct op
 {
-        char *cifs;
-        void (*fp)(va_list);
+	char *cifs;
+	void (*fp)(va_list);
 } op_t;
 
-void op_string(va_list thelist);
-void op_float(va_list thelist);
-void op_int(va_list thelist);
-void op_char(va_list thelist);
-void (*fp)(va_list thelist);
+void op_string(va_list);
+void op_float(va_list);
+void op_int(va_list);
+void op_char(va_list);
 #endif
