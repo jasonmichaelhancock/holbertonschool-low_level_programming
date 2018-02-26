@@ -39,6 +39,7 @@ void print_all(const char * const format, ...)
 		j++;
 	}
 	printf("\n");
+	va_end(thelist);
 }
 /**
  * op_char - char function.
