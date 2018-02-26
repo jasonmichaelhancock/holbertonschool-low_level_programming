@@ -75,5 +75,13 @@ void op_float(va_list thelist)
  */
 void op_string(va_list thelist)
 {
-	printf("%s", va_arg(thelist, char*));
+	char *yay;
+
+	yay = va_arg(thelist, char*);
+	if (yay == NULL)
+	{
+		printf("(nil)");
+		return;
+	}
+	printf("%s", yay);
 }
