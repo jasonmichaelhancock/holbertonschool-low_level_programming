@@ -13,6 +13,8 @@ void print_all(const char * const format, ...)
 	va_list thelist;
 	int i;
 	int j = 0;
+	char *string1 = "";
+	char *string2 = ", ";
 	op_t ops[] = {
 		{"c", op_char},
 		{"i", op_int},
@@ -28,8 +30,9 @@ void print_all(const char * const format, ...)
 		{
 			if (format[j] == *(ops[i].cifs))
 			{
+				printf("%s", string1);
 				ops[i].fp(thelist);
-				printf(", ");
+				string1 = string2;
 			}
 			i++;
 		}
