@@ -21,7 +21,7 @@ void print_all(const char * const format, ...)
 		{NULL, NULL}
 	};
 	va_start(thelist, format);
-	while (format[j] != '\0' && format != NULL))
+	while (format[j] != '\0' && format != NULL)
 	{
 		i = 0;
 		while (ops[i].cifs != NULL)
