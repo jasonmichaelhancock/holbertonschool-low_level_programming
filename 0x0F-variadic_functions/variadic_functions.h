@@ -21,5 +21,5 @@ void op_string(va_list thelist);
 void op_float(va_list thelist);
 void op_int(va_list thelist);
 void op_char(va_list thelist);
-void (*fp)(va_list thelist)
+void (*fp)(va_list thelist);
 #endif
