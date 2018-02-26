@@ -11,8 +11,9 @@
 void print_all(const char * const format, ...)
 {
 	va_list thelist;
-	int i = 0;
+	int i;
 	int j = 0;
+	char *ptr;
 	op_t ops[] = {
 		{"c", op_char},
 		{"i", op_int},
@@ -23,17 +24,19 @@ void print_all(const char * const format, ...)
 	va_start(thelist, format);
 	while (format[j] != '\0')
 	{
+		i = 0;
 		while (ops[i].cifs != NULL)
 		{
 			if (format[j] == *(ops[i].cifs))
 			{
 				ops[i].fp(thelist);
-				printf(", ");
+				printf("%s", ptr);
 			}
 			i++;
 		}
 		j++;
 	}
+	printf("\n");
 }
 /**
  * op_char - char function.
@@ -43,8 +46,8 @@ void print_all(const char * const format, ...)
  */
 void op_char(va_list thelist)
 {
-        printf("%c, ", va_arg(thelist, int));
-        return;
+	printf("%c", va_arg(thelist, int));
+	return;
 }
 /**
  * op_int - int function.
@@ -54,7 +57,7 @@ void op_char(va_list thelist)
  */
 void op_int(va_list thelist)
 {
-	printf("%d, ", va_arg(thelist, int));
+	printf("%d", va_arg(thelist, int));
 	return;
 }
 /**
@@ -65,7 +68,7 @@ void op_int(va_list thelist)
  */
 void op_float(va_list thelist)
 {
-	printf("%f, ",va_arg(thelist, double));
+	printf("%f",va_arg(thelist, double));
 	return;
 }
 /**
@@ -76,6 +79,6 @@ void op_float(va_list thelist)
  */
 void op_string(va_list thelist)
 {
-	printf("%s, ", va_arg(thelist, char*));
+	printf("%s", va_arg(thelist, char*));
 	return;
 }
