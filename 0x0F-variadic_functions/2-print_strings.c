@@ -41,7 +41,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		printf("(nil)");
 	else
 	{
-                printf("%s\n", item);
+		printf("%s\n", item);
 	}
 	va_end(arguments);
 }
