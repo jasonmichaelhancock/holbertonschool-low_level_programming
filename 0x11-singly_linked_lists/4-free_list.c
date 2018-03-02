@@ -4,16 +4,17 @@
 #include "lists.h"
 
 /**
- * main - check the code for Holberton School students.
+ * free_list - frees the memory of the current list.
+ * @head: the pointer to the list.
  *
- * Return: Always 0.
+ * Return: void.
  */
 void free_list(list_t *head)
 {
 	while (h != NULL)
 	{
-		free(h->str);
-		free(h);
-		h = h->next;;
+		free(head->str);
+		free(head);
+		head = head->next;;
 	}
 }
