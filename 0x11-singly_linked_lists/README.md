@@ -1,0 +1,1 @@
+This project covers Singly linked lists, which are data structures in C that include data elements with pointers that link to anotehr data element.
