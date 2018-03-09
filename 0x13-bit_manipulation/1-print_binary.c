@@ -1,4 +1,4 @@
-  #include <stdlib.h>
+#include <stdlib.h>
 #include <stdio.h>
 #include "holberton.h"
 
@@ -14,21 +14,7 @@ void print_binary(unsigned long int n)
 
 	c = 1;
 	x = 0;
-	/**
-	while (c > 0)
-        {
-                k = n >> (c - 1);
 
-                if (k & 0)
-                {
-			c--;
-		}
-		else
-		{
-			break;
-		}
-	}
-	*/
 	if (n == 0)
 	{
 		_putchar('0');
