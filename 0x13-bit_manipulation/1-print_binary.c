@@ -12,13 +12,32 @@ void print_binary(unsigned long int n)
 {
 	unsigned long int c, k;
 
-	for (c = 31; c > 0; c--)
+	c = 31;
+	while (c > 0)
+        {
+                k = n >> (c - 1);
+
+                if (k & 0)
+                {
+			c--;
+		}
+		else
+		{
+			break;
+		}
+	}
+	while (c > 0)
 	{
 		k = n >> (c - 1);
-
 		if (k & 1)
+		{
 			_putchar('1');
+			c--;
+		}
 		else
+		{
 			_putchar('0');
+			c--;
+		}
 	}
 }
