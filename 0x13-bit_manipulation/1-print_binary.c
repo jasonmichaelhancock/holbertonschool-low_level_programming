@@ -1,4 +1,4 @@
-#include <stdlib.h>
+  #include <stdlib.h>
 #include <stdio.h>
 #include "holberton.h"
 
@@ -10,9 +10,11 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int c, k;
+	unsigned long int c, k, x;
 
-	c = 31;
+	c = 1;
+	x = 0;
+	/**
 	while (c > 0)
         {
                 k = n >> (c - 1);
@@ -26,18 +28,34 @@ void print_binary(unsigned long int n)
 			break;
 		}
 	}
-	while (c > 0)
+	*/
+	if (n == 0)
 	{
-		k = n >> (c - 1);
+		_putchar('0');
+		return;
+	}
+	while (c <= n)
+	{
+		c = 2 * c;
+		x++;
+	}
+
+	c = 1;
+	while (x > 0)
+	{
+		k = n >> (x - 1);
 		if (k & 1)
 		{
 			_putchar('1');
-			c--;
+			c++;
+			x--;
 		}
 		else
 		{
 			_putchar('0');
-			c--;
+			c++;
+			x--;
 		}
+		c = 2 * c;
 	}
 }
