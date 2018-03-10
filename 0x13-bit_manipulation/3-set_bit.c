@@ -5,6 +5,7 @@
 /**
  * set_bit - translatesunsigned int to binary
  * @n: the number.
+ * @index: the bit to replace
  *
  * Return: The nothing
  */
@@ -30,4 +31,5 @@ int set_bit(unsigned long int *n, unsigned int index)
 		*n = *n + c;
 		return (1);
 	}
+	return (-1);
 }
