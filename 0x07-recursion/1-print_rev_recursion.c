@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * _puts_recursion - prints amstring without loops
+ * _print_rev_recursion - prints a string without loops
  * @s: pointer to the string..
  *
  * Return: void.
