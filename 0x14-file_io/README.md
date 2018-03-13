@@ -1,0 +1,1 @@
+This project covers file descriptors and the open() close(), read(), and write() functions.
