@@ -21,16 +21,23 @@ int create_file(const char *filename, char *text_content)
 	if (filename == NULL)
 		return (-1);
 	newfile = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0600);
-	if (newfile == 0)
+	if (newfile == '\0')
 		return (-1);
 	if (text_content == NULL)
 		text_content = "";
 	writtenfile = write(newfile, text_content, _strlen(text_content));
-	if (writtenfile == 0)
+	if (writtenfile == '\0')
 		return (-1);
 	close(newfile);
 	return (1);
 }
+
+/**
+ * _strlen - string length.
+ * @s: the string.
+ *
+ * Return: the length..
+ */
 int _strlen(char *s)
 {
 	int length;
