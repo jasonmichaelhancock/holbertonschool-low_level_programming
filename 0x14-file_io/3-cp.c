@@ -26,13 +26,13 @@ int main(int argc, char **argv)
 	a = open(argv[1], O_RDONLY);
 	if (a == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from the file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	b = open(argv[2], O_RDWR | O_TRUNC | O_CREAT, 0664);
 	if (b == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to the file %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
 		exit(99);
 	}
 	while (not_done == 1)
@@ -40,7 +40,7 @@ int main(int argc, char **argv)
 		c = read(a, buf, 1024);
 		if (c == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to the file %s\n", argv[1]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[1]);
 			exit(99);
 		}
 		if (c < 1024)
@@ -48,7 +48,7 @@ int main(int argc, char **argv)
 		d = write(b, buf, c);
 		if (d == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to the file %s\n", argv[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
 			exit(99);
 		}
 	}
