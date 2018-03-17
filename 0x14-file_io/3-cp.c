@@ -22,7 +22,10 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Usage: cp %s %s\n", argv[0], argv[1]);
 	a = open(argv[1], O_RDONLY);
 	if (a == -1)
+	{
 		dprintf(STDERR_FILENO, "Error: Can't read from the file %s\n", argv[1]);
+		exit(97);
+	}
 	b = open(argv[2], O_RDWR | O_TRUNC | O_CREAT | O_APPEND, 0664);
 	if (b == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to the file %s\n", argv[2]);
