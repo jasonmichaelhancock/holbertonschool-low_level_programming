@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't read from the file %s\n", argv[1]);
 		exit(98);
 	}
-	b = open(argv[2], O_RDWR | O_TRUNC | O_CREAT | O_APPEND, 0664);
+	b = open(argv[2], O_RDWR | O_TRUNC | O_CREAT, 0664);
 	if (b == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to the file %s\n", argv[2]);
@@ -61,7 +61,7 @@ int main(int argc, char **argv)
 	d = close(b);
 	if (d == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", c);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", d);
 		exit(100);
 	}
 	return (0);
