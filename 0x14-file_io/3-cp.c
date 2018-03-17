@@ -45,7 +45,6 @@ int main(int argc, char **argv)
 		}
 		if (c < 1024)
 			not_done = 0;
-		printf("%d\n", c);
 		d = write(b, buf, c);
 		if (d == -1)
 		{
@@ -53,14 +52,12 @@ int main(int argc, char **argv)
 			exit(99);
 		}
 	}
-	a = close(a);
-	if (a == -1)
+	if (close(a) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", c);
 		exit(100);
 	}
-	b = close(b);
-	if (b == -1)
+	if (close(b) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", d);
 		exit(100);
