@@ -39,18 +39,30 @@ int main(int argc, char **argv)
 	{
 		c = read(a, buf, 1024);
 		if (c == -1)
+		{
 			dprintf(STDERR_FILENO, "Error: Can't write to the file %s\n", argv[1]);
+			exit(99);
+		}
 		if (c < 1024)
 			not_done = 0;
 		d = write(b, buf, c);
 		if (d == -1)
+		{
 			dprintf(STDERR_FILENO, "Error: Can't write to the file %s\n", argv[2]);
+			exit(99);
+		}
 	}
 	c = close(a);
 	if (c == -1)
+	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", c);
+		exit(100);
+	}
 	d = close(b);
 	if (d == -1)
+	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", c);
+		exit(100);
+	}
 	return (0);
 }
