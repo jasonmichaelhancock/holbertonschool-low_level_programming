@@ -16,6 +16,8 @@ int set_bit(unsigned long int *n, unsigned int index)
 	c = 1;
 	x = 0;
 
+	if (index > 32)
+		return (-1);
 	while (x < index)
 	{
 		c = 2 * c;
