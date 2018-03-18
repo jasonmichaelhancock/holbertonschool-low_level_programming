@@ -20,7 +20,7 @@ int main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp %s %s\n", argv[1], argv[2]);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	a = open(argv[1], O_RDONLY);
@@ -39,7 +39,7 @@ int main(int argc, char **argv)
 	c = 1024;
 	while (c == 1024)
 	{
-		c = read(a, buf, 1024); /*c is number of characters read*/
+		c = read(a, buf, 1024);
 
 		if (c == -1)
 		{
