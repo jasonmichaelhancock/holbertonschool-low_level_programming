@@ -16,10 +16,6 @@ int get_bit(unsigned long int n, unsigned int index)
 	c = 1;
 	x = 0;
 
-	if (n == 0)
-	{
-		return (-1);
-	}
 	while (c <= n)
 	{
 		c = 2 * c;
