@@ -10,7 +10,7 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int i, j, decimal_val = 0, base = 1, rem;
+	unsigned int i, j, value = 0, base = 1, digit;
 
 	if (b == NULL)
                 return (0);
@@ -19,12 +19,11 @@ unsigned int binary_to_uint(const char *b)
 		if (b[i] != '0' && b[i] != '1')
 			return (0);
 	}
-	j = i;
-	for (i = 0; i < j; i++)
+	for (j = 0; j < i; j++)
         {
-		rem = b[j - i - 1];
-		decimal_val = decimal_val + (rem * base);
+		digit = ((b[i - j - 1]) - 48);
+		value = value + (digit * base);
 		base = base * 2;
 	}
-	return (decimal_val);
+	return (value);
 }
