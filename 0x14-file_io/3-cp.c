@@ -15,7 +15,7 @@
  */
 int main(int argc, char **argv)
 {
-	int not_done = 1, a, b, c, d;
+	int  a, b, c, d;
 	char buf[1024];
 
 	if (argc != 3)
@@ -35,23 +35,25 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	while (not_done == 1)
+
+	c = 1024;
+	while (c == 1024)
 	{
-		c = read(a, buf, 1024);
+		c = read(a, buf, 1024); /*c is number of characters read*/
+
 		if (c == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			exit(98);
 		}
-		if (c < 1024)
-			not_done = 0;
 		d = write(b, buf, c);
 		if (d == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
 	}
+
 	if (close(a) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", c);
