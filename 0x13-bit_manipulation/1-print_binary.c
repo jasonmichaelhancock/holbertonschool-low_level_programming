@@ -25,23 +25,18 @@ void print_binary(unsigned long int n)
 		c = 2 * c;
 		x++;
 	}
-
-	c = 1;
 	while (x > 0)
 	{
 		k = n >> (x - 1);
 		if (k & 1)
 		{
 			_putchar('1');
-			c++;
 			x--;
 		}
 		else
 		{
 			_putchar('0');
-			c++;
 			x--;
 		}
-		c = 2 * c;
 	}
 }
