@@ -16,6 +16,10 @@ int clear_bit(unsigned long int *n, unsigned int index)
 	c = 1;
 	x = 0;
 
+	if (n == NULL)
+		return (-1);
+	if (index > 32)
+		return (-1);
 	while (x < index)
 	{
 		c = 2 * c;
@@ -33,5 +37,5 @@ int clear_bit(unsigned long int *n, unsigned int index)
 		*n = *n - c;
 		return (1);
 	}
-	return (-1);
+	return (1);
 }
