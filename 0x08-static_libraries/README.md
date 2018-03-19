@@ -1,0 +1,1 @@
+This project focuses on creating and understanding the functioning of static libraries.

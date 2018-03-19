@@ -1,0 +1,1 @@
+This project covers argc and argv, which are the "arguments to main".  It also touched on unused variables.

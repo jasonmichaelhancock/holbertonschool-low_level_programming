@@ -1,0 +1,1 @@
+This project covers recursion, which is a type of looping that is less straightforward.
