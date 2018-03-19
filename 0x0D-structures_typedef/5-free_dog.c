@@ -10,13 +10,10 @@
  */
 void free_dog(dog_t *d)
 {
-	char *new_name;
-	char *new_owner;
-
 	if (d != NULL)
 	{
-		free(new_name);
-		free(new_owner);
+		free(d->name);
+		free(d->owner);
 		free(d);
 	}
 }
