@@ -1,0 +1,1 @@
+This projects covers dynamic library and supplements a previous project on static libraries.
