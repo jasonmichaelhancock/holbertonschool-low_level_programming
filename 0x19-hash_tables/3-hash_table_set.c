@@ -18,7 +18,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	temp = (ht->array[index]);
 	if (ht->array[index] != NULL)
 	{
-		while (temp->next != NULL)
+		while (temp != NULL)
 		{
 			if (strcmp(temp->key, key) == 0)
 			{
