@@ -80,7 +80,7 @@ void shash_table_print_rev(const shash_table_t *ht)
         if (ht != NULL)
         {
                 printf("{");
-                while (index >= 0)
+                while (index > 0)
                 {
                         if (ht->array[index] != NULL)
                         {
