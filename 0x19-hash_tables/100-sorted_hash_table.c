@@ -32,3 +32,40 @@ shash_table_t *shash_table_create(unsigned long int size)
 	}
 	return (shash);
 }
+
+/**
+ * shash_table_print - print a hash table.
+ * @ht: the hash table.
+ *
+ * Return: nothing
+ */
+void shash_table_print(const shash_table_t *ht)
+{
+	shash_node_t *temp = NULL;
+	unsigned long int index = 0;
+	int i = 0;
+
+	if (ht != NULL)
+	{
+		printf("{");
+		while (index < ht->size)
+		{
+			if (ht->array[index] != NULL)
+			{
+				temp = (ht->array[index]);
+				while (temp != NULL)
+				{
+					if (i == 1)
+					{
+						printf(", ");
+					}
+					printf("'%s': '%s'", temp->key, temp->value);
+					temp = temp->next;
+					i = 1;
+				}
+			}
+			index++;
+		}
+		printf("}\n");
+	}
+}
