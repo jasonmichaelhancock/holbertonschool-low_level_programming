@@ -12,25 +12,27 @@ void hash_table_print(const hash_table_t *ht)
 	unsigned long int index = 0;
 	int i = 0;
 
-	printf("{");
-	while (index < ht->size)
+	if (ht != NULL)
 	{
-		if (ht->array[index] != NULL)
+		printf("{");
+		while (index < ht->size)
 		{
-			temp = (ht->array[index]);
-			while (temp != NULL)
+			if (ht->array[index] != NULL)
 			{
-				if(i == 1)
+				temp = (ht->array[index]);
+				while (temp != NULL)
 				{
-					printf(", ");
+					if (i == 1)
+					{
+						printf(", ");
+					}
+					printf("'%s': '%s'", ht->array[index]->key, ht->array[index]->value);
+					temp = temp->next;
+					i = 1;
 				}
-				printf("'%s': '%s'", ht->array[index]->key, ht->array[index]->value);
-				temp = temp->next;
-				i = 1;
 			}
+			index++;
 		}
-		index++;
+		printf("}\n");
 	}
-	printf("}\n");
-	return;
 }
