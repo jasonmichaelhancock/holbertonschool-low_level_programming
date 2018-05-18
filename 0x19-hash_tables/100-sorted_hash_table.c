@@ -69,39 +69,44 @@ void shash_table_print(const shash_table_t *ht)
 		printf("}\n");
 	}
 }
-
+/**
+ * shash_table_print_rev - print a hash table in reverse..
+ * @ht: the hash table.
+ *
+ * Return: 1 or 0..
+ */
 
 void shash_table_print_rev(const shash_table_t *ht)
 {
-        shash_node_t *temp = NULL;
-        unsigned long int index = 0;
-        int i = ht->size;
+	shash_node_t *temp = NULL;
+	unsigned long int index = 0;
+	int i = ht->size;
 
-        if (ht != NULL)
-        {
-                printf("{");
-                while (index > 0)
-                {
-                        if (ht->array[index] != NULL)
-                        {
-                                temp = (ht->array[index]);
-                                while (temp != NULL)
-                                {
-                                        temp = temp->next;
-                                }
+	if (ht != NULL)
+	{
+		printf("{");
+		while (index > 0)
+		{
+			if (ht->array[index] != NULL)
+			{
+				temp = (ht->array[index]);
+				while (temp != NULL)
+				{
+					temp = temp->next;
+				}
 				while (temp != NULL)
 				{
 					if (i == 1)
 					{
 						printf(", ");
 					}
-                                        printf("'%s': '%s'", temp->key, temp->value);
+					printf("'%s': '%s'", temp->key, temp->value);
 					temp = temp->sprev;
 					i = 1;
 				}
-                        }
-                        index++;
-                }
-                printf("}\n");
-        }
+			}
+			index++;
+		}
+		printf("}\n");
+	}
 }
