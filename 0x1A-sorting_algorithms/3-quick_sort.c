@@ -13,14 +13,15 @@ void quick_sort(int *array, size_t size)
 }
 
 /**
- * qk_sort - sort according to size
+ * partition - sort according to size
  * @array: the set of numbers
  * @low: the low index
  * @high: the high index
+ * @size: size of array
  *
  * Return: the index
  */
-int partition (int *array, int low, int high, size_t size)
+int partition(int *array, int low, int high, size_t size)
 {
 	int pivot = array[high];
 	int i = low;
@@ -28,8 +29,6 @@ int partition (int *array, int low, int high, size_t size)
 
 	for (j = low; j < high; j++)
 	{
-		/* If current element is smaller than or
-		   equal to pivot */
 		if (array[j] <= pivot)
 		{
 			if (j != i)
@@ -49,7 +48,7 @@ int partition (int *array, int low, int high, size_t size)
 }
 
 /**
- * qk_sort - sort according to size
+ * qksort - sort according to size
  * @array: the set of numbers
  * @low: the low index
  * @high: the high index
@@ -61,12 +60,8 @@ void qksort(int *array, int low, int high, size_t size)
 {
 	if (low < high)
 	{
-		/* pi is partitioning index, arr[p] is now
-		   at right place */
 		int pi = partition(array, low, high, size);
 
-		/* Separately sort elements before
-		   partition and after partition */
 		qksort(array, low, pi - 1, size);
 		qksort(array, pi + 1, high, size);
 	}
@@ -79,7 +74,7 @@ void qksort(int *array, int low, int high, size_t size)
  *
  * Return: Always 0
  */
-void swap(int* a, int* b)
+void swap(int *a, int *b)
 {
 	int t = *a;
 	*a = *b;
