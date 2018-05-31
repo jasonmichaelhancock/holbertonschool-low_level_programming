@@ -23,29 +23,29 @@ void quick_sort(int *array, size_t size)
 int partition (int *array, int low, int high, size_t size)
 {
 	int pivot = array[high];
-	int i = (low - 1);
+	int i = low;
 	int j;
 
-	for (j = low; j <= high - 1; j++)
+	for (j = low; j < high; j++)
 	{
 		/* If current element is smaller than or
 		   equal to pivot */
 		if (array[j] <= pivot)
 		{
-			i++;    /* increment index of smaller element */
 			if (j != i)
 			{
 				swap(&array[i], &array[j]);
 				print_array(array, size);
 			}
+			i++;
 		}
 	}
-	if (j != i)
+	if (i != high)
 	{
-		swap(&array[i + 1], &array[high]);
+		swap(&array[i], &array[high]);
 		print_array(array, size);
 	}
-	return (i + 1);
+	return (i);
 }
 
 /**
