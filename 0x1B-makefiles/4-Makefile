@@ -5,15 +5,15 @@ NAME = holberton
 RM = rm -f
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
-all: $(OBJ)
-        $(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+all : $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-clean:
-        $(RM) *~ $(NAME)
+clean :
+	$(RM) *~ $(NAME)
 
-oclean:
-        $(RM) $(OBJ)
+oclean :
+	$(RM) $(OBJ)
 
-fclean: clean oclean
+fclean : clean oclean
 
-re: oclean all
+re : oclean all
