@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""This describes an island."""
+
 
 def island_perimeter(grid):
     """Function finds the perimeter of an island."""
@@ -11,21 +13,21 @@ def island_perimeter(grid):
                 try:
                     if grid[i - 1][j] == 0:
                         per = per + 1
-                except:
+                except IndexError:
                     per = per + 1
                 try:
                     if grid[i + 1][j] == 0:
                         per = per + 1
-                except:
+                except IndexError:
                     per = per + 1
                 try:
                     if grid[i][j - 1] == 0:
                         per = per + 1
-                except:
+                except IndexError:
                     per = per + 1
                 try:
                     if grid[i][j + 1] == 0:
                         per = per + 1
-                except:
+                except IndexError:
                     per = per + 1
     return(per)
