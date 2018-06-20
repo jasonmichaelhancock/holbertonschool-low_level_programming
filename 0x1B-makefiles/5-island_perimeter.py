@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This describes an island."""
+"""This describes  an island."""
 
 
 def island_perimeter(grid):
