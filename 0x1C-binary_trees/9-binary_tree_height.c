@@ -9,18 +9,15 @@
  */
 size_t binary_tree_height(const binary_tree_t *tree)
 {
-	if (tree == NULL)
-		return(-1);
-	return((max(binary_tree_height(tree->left), binary_tree_height(tree->right))) +1);
-}
-/**
- * binary_tree_height - find height of tree
- *
- * @tree: pointer to the root
- *
- * Return: height
- */
-size_t max(size_t x, size_t y)
-{
-	return(((x) > (y)) ? (x) : (y));
+	size_t rheight;
+	size_t lheight;
+
+	if (tree == NULL || (tree->left == NULL && tree->right == NULL))
+		return(0);
+	lheight = binary_tree_height(tree->left);
+	rheight = binary_tree_height(tree->right);
+	if (lheight > rheight)
+		return(lheight + 1);
+	else
+		return(rheight + 1);
 }
