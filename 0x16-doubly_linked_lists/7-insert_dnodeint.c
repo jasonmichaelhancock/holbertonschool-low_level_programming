@@ -22,28 +22,28 @@ return (NULL);
 new = malloc(sizeof(dlistint_t));
 if (new == NULL)
 	return (NULL);
-  new->n = n;
-  temp = *h;
-  if (idx == 0)
-  {
-          add_dnodeint(h, n);
-          return (new);
-  }
-  while ((temp != NULL) && (i < idx))
-    {
-      temp = temp->next;
-      i++;
-    }
-  if (idx != i)
-	  return (NULL);
-  if (temp == NULL)
-  {
-          add_dnodeint_end(h, n);
-          return (new);
-  }
-  new->next = temp;
-  new->prev = temp->prev;
-  new->prev->next = new;
-  temp->prev = new;
-  return (new);
+new->n = n;
+temp = *h;
+if (idx == 0)
+{
+	add_dnodeint(h, n);
+	return (new);
+}
+while ((temp != NULL) && (i < idx))
+{
+	temp = temp->next;
+	i++;
+}
+if (idx != i)
+	return (NULL);
+if (temp == NULL)
+{
+	add_dnodeint_end(h, n);
+	return (new);
+}
+new->next = temp;
+new->prev = temp->prev;
+new->prev->next = new;
+temp->prev = new;
+return (new);
 }
