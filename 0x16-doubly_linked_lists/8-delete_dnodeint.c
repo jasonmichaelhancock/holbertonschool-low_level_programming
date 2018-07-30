@@ -23,6 +23,7 @@ if (index == 0)
 	*head = temp->next;
 	if (*head != NULL)
 		(*head)->prev = NULL;
+	free(temp);
 	return (1);
 }
 while (i < index)
